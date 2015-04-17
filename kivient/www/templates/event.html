@@ -1,5 +1,13 @@
 <ion-view view-title="Évènement">
   <ion-content>
-    <h1>Évènement</h1>
+    <h1>{{thisEvent.title}}</h1>
+    <div class="category">
+    <span>{{thisEvent.category}}</span>
+    <span><a href="#" ng-click="addContact()">Ajouter aux contacts</a></span>
+    </div>
+    <div class="hours">
+    	<span>le {{thisEvent.hours.date}} </span>
+	    <span>{{thisEvent.hours.start}} - {{thisEvent.hours.end}}</span>
+    </div>
   </ion-content>
 </ion-view>
