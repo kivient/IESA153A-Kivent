@@ -70,7 +70,8 @@ angular.module('starter.controllers', [])
   
   // Function to save owner event contact
   contactForm = $scope.thisEvent.owner;
-  $scope.addContact = function() {
+  $scope.addContact = function() 
+  {
     var phoneNumbers = [];
     phoneNumbers[0] = new ContactField('Principal', contactForm.phoneNumbers, false);
     contactForm.phoneNumbers = phoneNumbers;
@@ -82,6 +83,12 @@ angular.module('starter.controllers', [])
       // Contact error
     });
   };
+
+  // Function to participate
+  $scope.participate = function(id) 
+  {
+    console.log(id); 
+  }
 
 })
 
