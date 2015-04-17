@@ -1,10 +1,13 @@
 var allEvents = [
     { 
       id: 1,
-      category  : 'Soirée',
-      title     : 'Lancement de l\'applicaiton',
-      hours     : {start: '19:00', end: '06:00', date: '17/04/2015'},
-      owner     : {displayName: 'Henri Durand', phoneNumbers: '0687384537'}
+      category    : 'Soirée',
+      title       : 'Lancement de l\'applicaiton',
+      hours       : {start: '19:00', end: '06:00', date: '17/04/2015'},
+      owner       : {displayName: 'Henri Durand', phoneNumbers: '0687384537'},
+      adress      : {street: '6 rue Froment', cp: '75011', city: 'Paris'},
+      description : 'Soirée de lancement de l\'appli Kivient',
+      picture     : 'ionic.png'
     },
     { id: 2, title: 'Event 02' },
   ];
@@ -68,8 +71,13 @@ angular.module('starter.controllers', [])
   // Function to save owner event contact
   contactForm = $scope.thisEvent.owner;
   $scope.addContact = function() {
+    var phoneNumbers = [];
+    phoneNumbers[0] = new ContactField('Principal', contactForm.phoneNumbers, false);
+    contactForm.phoneNumbers = phoneNumbers;
+    console.log(contactForm);
+
     $cordovaContacts.save(contactForm).then(function(result) {
-      alert(result);
+      // alert(result);
     }, function(err) {
       // Contact error
     });
