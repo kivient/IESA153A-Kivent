@@ -1,3 +1,15 @@
+var allEvents = [
+    { 
+      id: 1,
+      category  : 'Soirée',
+      title     : 'Lancement de l\'applicaiton',
+      hours     : {start: '19:00', end: '06:00', date: '17/04/2015'},
+      owner     : {displayName: 'Henri Durand', phoneNumbers: '0687384537'}
+    },
+    { id: 2, title: 'Event 02' },
+  ];
+
+
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
@@ -33,19 +45,39 @@ angular.module('starter.controllers', [])
   };
 })
 
+/** List all events **/
 .controller('EventsCtrl', function($scope) {
-  $scope.events = [
-    { title: 'Event 01', id: 1 },
-    { title: 'Event 02', id: 2 },
-  ];
+  $scope.events = allEvents;
 })
 
-.controller('EventCtrl', function($scope, $stateParams) {
 
+
+/** Single event age **/
+.controller('EventCtrl', function($scope, $stateParams, $cordovaContacts) {
+  $scope.events = allEvents;
   var id = $stateParams.id;
-  alert(id);
+
+  // Get this event information
+  $scope.events.forEach( function(a, e) {
+    if (a.id == id) {
+      $scope.thisEvent = a;
+      return false;
+    }
+  });
+  
+  // Function to save owner event contact
+  contactForm = $scope.thisEvent.owner;
+  $scope.addContact = function() {
+    $cordovaContacts.save(contactForm).then(function(result) {
+      alert(result);
+    }, function(err) {
+      // Contact error
+    });
+  };
 
 })
+
+
 
 .controller('ProfilCtrl', function($scope) {
 })
