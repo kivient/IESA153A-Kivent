@@ -1,13 +1,13 @@
-<ion-side-menus enable-menu-with-back-views="false">
+<ion-side-menus enable-menu-with-back-views="true">
   <ion-side-menu-content>
     <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
 
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
       </ion-nav-buttons>
+      <ion-nav-back-button>
+      </ion-nav-back-button>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
@@ -18,19 +18,23 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item nav-clear menu-close href="#/app/events">
+        <ion-item nav-clear menu-close href="#/app/events" ng-if="isLogged">
           Flux d'évènement
         </ion-item>
 
-        <ion-item nav-clear menu-close href="#/app/create">
+        <ion-item nav-clear menu-close href="#/app/create" ng-if="isLogged">
           Créer un évènement
         </ion-item>
 
-        <ion-item nav-clear menu-close ng-click="login()">
+        <ion-item nav-clear menu-close href="#/app/login" ng-if="!isLogged">
           Login
         </ion-item>
 
-        <ion-item nav-clear menu-close href="#/app/profil">
+        <ion-item nav-clear menu-close href="#/app/register" ng-if="!isLogged">
+          Inscription
+        </ion-item>
+
+        <ion-item nav-clear menu-close href="#/app/profil" ng-if="isLogged">
           Profil
         </ion-item>
       </ion-list>
