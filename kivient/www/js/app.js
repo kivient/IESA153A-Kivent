@@ -22,6 +22,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ui.rout
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    var googleanalyticsApp = angular.module('googleanalytics', ['ionic'])
+    .run(function($ionicPlatform, $ionicPopup) {
+        $ionicPlatform.ready(function() {
+            if(typeof analytics !== undefined) {
+                analytics.startTrackerWithId("UA-62201685-1");
+            } else {
+                console.log("Google Analytics Unavailable");
+            }
+        });
+    });
+
+    googleanalyticsApp.controller('AwesomeController', function($scope) {
+      if(typeof analytics !== undefined) { analytics.trackView("Awesome Controller"); }
+ 
+        $scope.initEvent = function() {
+            if(typeof analytics !== undefined) { analytics.trackEvent("Category", "Action", "Label", 25); }
+        }
+    });
   });
 
   $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
@@ -110,7 +129,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ui.rout
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/login');
 });
-
 
 function userIsLoggedIn() {
   return false;

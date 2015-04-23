@@ -15,10 +15,31 @@ var allEvents = [
 
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state) {
   // Form data for the login modal
   $scope.loginData = {};
   $scope.isLogged = true;
+
+  $scope.t = function(word) {
+
+    if (typeof $rootScope.locale == "undefined") { $rootScope.locale = 'en'; }
+    return GlobalizationService.translate($rootScope.locale, word);
+  }
+
+  $scope.setLang = function() {
+    $scope.langage = $scope.t('langage');
+  }
+
+  $scope.changeLocale = function() {
+
+    $rootScope.locale = ($rootScope.locale == 'en') ? 'fr' : 'en';
+    $scope.setLang();
+    // $state.reload();
+
+  }
+
+  $scope.setLang();
+
 })
 
 /** List all events **/
@@ -71,9 +92,11 @@ angular.module('starter.controllers', [])
 .controller('ProfilCtrl', function($scope) {
 })
 
-.controller('CreateCtrl', function($scope, $cordovaGeolocation, $http, $cordovaCamera) {
+.controller('CreateCtrl', function($scope, $cordovaGeolocation, $http, $cordovaCamera, $rootScope) {
 
   $scope.create = {};
+
+  console.log($rootScope.locale);
 
   $scope.here = function() {
     var posOptions = {timeout: 10000, enableHighAccuracy: false};

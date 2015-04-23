@@ -19,11 +19,11 @@
     <ion-content>
       <ion-list>
         <ion-item nav-clear menu-close href="#/app/events" ng-if="isLogged">
-          Flux d'évènement
+          {{ t('events-list') }}
         </ion-item>
 
         <ion-item nav-clear menu-close href="#/app/create" ng-if="isLogged">
-          Créer un évènement
+          {{ t('create-new-event') }}
         </ion-item>
 
         <ion-item nav-clear menu-close href="#/app/login" ng-if="!isLogged">
@@ -36,6 +36,9 @@
 
         <ion-item nav-clear menu-close href="#/app/profil" ng-if="isLogged">
           Profil
+        </ion-item>
+        <ion-item nav-clear menu-close ng-click="changeLocale()">
+          {{ langage }}
         </ion-item>
       </ion-list>
     </ion-content>

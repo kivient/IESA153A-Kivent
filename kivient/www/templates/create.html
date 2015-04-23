@@ -1,6 +1,6 @@
-<ion-view view-title="Nouvel évènement">
+<ion-view view-title="{{ t('new-event') }}">
   <ion-content class="padding">
-    <h1>Créer nouvel évènement</h1>
+    <h1>{{ t('create-new-event') }}</h1>
 
     <div>
     	<img src="" id="myImage">
@@ -9,11 +9,11 @@
     <div class="list">
       <button class="button icon ion-camera" ng-click="cam()"></button>
 	  <label class="item item-input">
-	    <input type="text" placeholder="Nom de l'évènement" id="name" ng-model="test">
+	    <input type="text" placeholder="{{ t('name') }}" id="name" ng-model="test">
 	  </label>
 	  <label class="item item-input">
 	    <select name="category" id="category" placeholder="Catégorie">
-		  <option value="Apéro">Apéro</option> 
+		  <option value="Apéro">{{ t('drink') }}</option> 
 		  <option value="Sport">Sport</option>
 		  <option value="Culture">Culture</option>
 		</select>
@@ -22,27 +22,27 @@
 	    <span>Date </span><input type="date" placeholder="Date" id="date" ng-model="create.dateStart">
 	  </label>
 	  <label class="item item-input">
-	    <span>Début </span><input type="time" placeholder="Début" id="debut" ng-model="create.hoursStart">
+	    <span>{{ t('start') }} </span><input type="time" placeholder="{{ t('start') }}" id="debut" ng-model="create.hoursStart">
 	  </label>
 	  <label class="item item-input">
-	    <span>Fin </span><input type="time" placeholder="Fin" id="fin">
+	    <span>{{ t('end') }} </span><input type="time" placeholder="{{ t('end') }}" id="fin">
 	  </label>
 	  <button class="button icon ion-flag" ng-click="here()"></button>
 	  <label class="item item-input">
-	    <input type="text" placeholder="Adresse" id="adress" ng-model="create.street">
+	    <input type="text" placeholder="{{ t('adress') }}" id="adress" ng-model="create.street">
 	  </label>
 	  <label class="item item-input">
-	    <input type="text" placeholder="Code postal" id="cp" ng-model="create.cp">
+	    <input type="text" placeholder="{{ t('cp') }}" id="cp" ng-model="create.cp">
 	  </label>
 	  <label class="item item-input">
-	    <input type="text" placeholder="Ville" id="city" ng-model="create.city">
+	    <input type="text" placeholder="{{ t('city') }}" id="city" ng-model="create.city">
 	  </label>
 	  <label class="item item-input">
 	    <textarea placeholder="Description" id="description"></textarea>
 	  </label>
 	</div>
 	<div class="padding">
-    	<button class="button button-block button-positive activated">Créer</button>
+    	<button class="button button-block button-positive activated">{{ t('create') }}</button>
   	</div>
 
   </ion-content>
