@@ -8,7 +8,7 @@ La géolocalisation sur les deux devices (iOS et android)
 
 ## Solutions
 
-iOS : paramétrer l'emulateur, aller dans Debug > location et cochez City Run
+iOS : paramétrer l'emulator, aller dans Debug > location et cochez City Run
 
 Android : configurez un nouvel emulator dans studio android ou installer un driver et faire la démo sur un téléphone
 
