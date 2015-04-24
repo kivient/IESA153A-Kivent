@@ -52,6 +52,10 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 - Nous allons afficher un message lorsque l'utilisateur tourne son écran pour lui indiquer qu'il aura une meilleure visibilité à la verticale
 
 
+## Business Model Canvas
+
+![Screenshot des détails](https://scontent-lhr.xx.fbcdn.net/hphotos-xta1/t31.0-8/11148821_10153252133742296_6535450491144904868_o.jpg)
+
 
 ## Installation
 
