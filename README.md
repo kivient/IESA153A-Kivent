@@ -6,7 +6,7 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 - La géolocalisation sur les deux devices (iOS et android)
 
-- Storage : sous android il n'y qu'un champs qui est sauvegardé
+- Storage : sous android il n'y a qu'un champs qui est sauvegardé
 
 ## Solutions techniques
 
