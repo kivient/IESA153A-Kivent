@@ -15,9 +15,7 @@ var allEvents = [
 
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state, $cordovaGoogleAnalytics, $window, $cordovaDeviceOrientation) {
-
-  console.log($cordovaDeviceOrientation.getCurrentHeading());
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state, $cordovaGoogleAnalytics, $window) {
 
   // Form data for the login modal
   $scope.loginData = {};
