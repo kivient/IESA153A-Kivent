@@ -47,3 +47,60 @@ $ ionic build ios
 $ ionic emulate ios
 
 ## utilisation
+
+
+## Avancement du projet
+
+- J1
+. Présentation coquille vide android et iOS
+. Mise en place du framework Ionic
+. Ajout de contact
+
+- J2
+. La géolocalisation
+. L'accès remote via l'api google pour récupérer les adresses via les coordonnées GPS
+. Le thème UI : icon et splashscreen de l'application
+. Globalization : Traduction via un button en français ou en anglais
+
+- J3
+. Storage
+. Google analytics
+. Caméra
+. Status bar
+. Business Model Canvas
+. Connexion
+. Device Orientation
+
+
+
+## Court terme
+
+- Consulter le tableau
+
+
+## Long terme
+
+- Apprentissage Angular.js
+. Lire la doc
+. Faire 3 tutos
+. Effectuer une action en js
+
+
+## A conserver pour chaque DEMO
+
+- Installation de plugins fonctionnels
+- Environnement stable de demo
+- Meilleure compréhension du brief client
+
+
+
+## Réunion d'équipe / Emploi du temps
+
+TOUS LES JOURS
+
+- 8h50 : on se dit bonjour et on parle de notre vie si on a envie.
+- 9h00 : on récupère les nouvelles demandes clients
+- 9h15 : rédaction des users stories
+- À partir de 9h30 : rendez-vous avec le client, présentations des users stories, questions/réponses et engagements sur la journée
+- 10h 
+
