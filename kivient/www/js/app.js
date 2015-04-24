@@ -9,7 +9,7 @@
 //   return false;
 // }
 
-angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ui.router'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ui.router', 'ngStorage'])
 
 .run(function($ionicPlatform, $rootScope, $state) {
   $ionicPlatform.ready(function() {
@@ -19,28 +19,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ui.rout
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
     if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
+      window.StatusBar.hide();
     }
-
-    var googleanalyticsApp = angular.module('googleanalytics', ['ionic'])
-    .run(function($ionicPlatform, $ionicPopup) {
-        $ionicPlatform.ready(function() {
-            if(typeof analytics !== undefined) {
-                analytics.startTrackerWithId("UA-62201685-1");
-            } else {
-                console.log("Google Analytics Unavailable");
-            }
-        });
-    });
-
-    googleanalyticsApp.controller('AwesomeController', function($scope) {
-      if(typeof analytics !== undefined) { analytics.trackView("Awesome Controller"); }
- 
-        $scope.initEvent = function() {
-            if(typeof analytics !== undefined) { analytics.trackEvent("Category", "Action", "Label", 25); }
-        }
-    });
   });
 
   $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){

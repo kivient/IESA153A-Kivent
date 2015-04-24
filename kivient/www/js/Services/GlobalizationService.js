@@ -4,6 +4,12 @@ var GlobalizationService = {
 		'name'				: { 'en' : 'Name', 
 								'fr' : 'Nom' 
 							  },
+		'firstname'			: { 'en' : 'Firstname',
+								'fr' : 'Prénom'
+							  },
+		'lastname'			: { 'en' : 'Lastname',
+								'fr' : 'Nom'
+							  },
 		'drink' 			: { 'en' : 'Drink', 
 								'fr' : 'Apéro' 
 							  },
@@ -39,6 +45,12 @@ var GlobalizationService = {
 							  },
 		'langage'			: { 'en' : 'Version française',
 								'fr' : 'English version'
+							  },
+		'update'			: { 'en' : 'Update',
+								'fr' : 'Modifier'
+							  },
+		'infos-uodated'		: { 'en' : 'Your informations has been updated',
+								'fr' : 'Vos informations ont été modifiées'
 							  },
 	},
 

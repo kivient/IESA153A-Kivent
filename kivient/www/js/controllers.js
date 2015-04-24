@@ -15,7 +15,10 @@ var allEvents = [
 
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $state, $cordovaGoogleAnalytics, $window, $cordovaDeviceOrientation) {
+
+  console.log($cordovaDeviceOrientation.getCurrentHeading());
+
   // Form data for the login modal
   $scope.loginData = {};
   $scope.isLogged = true;
@@ -24,11 +27,11 @@ angular.module('starter.controllers', [])
 
     if (typeof $rootScope.locale == "undefined") { $rootScope.locale = 'en'; }
     return GlobalizationService.translate($rootScope.locale, word);
-  }
+  };
 
   $scope.setLang = function() {
     $scope.langage = $scope.t('langage');
-  }
+  };
 
   $scope.changeLocale = function() {
 
@@ -36,16 +39,21 @@ angular.module('starter.controllers', [])
     $scope.setLang();
     // $state.reload();
 
-  }
+  };
 
   $scope.setLang();
-
 })
 
 /** List all events **/
-.controller('EventsCtrl', function($scope, $ionicViewService) {
+.controller('EventsCtrl', function($scope, $ionicViewService, $localStorage, $cordovaNetwork) {
   $ionicViewService.clearHistory();
   $scope.events = allEvents;
+
+  $scope.isOffline = function() {
+    if (typeof navigator.connection !== "undefined") {
+      return $cordovaNetwork.isOffline();
+    }
+  }
 })
 
 
@@ -89,7 +97,29 @@ angular.module('starter.controllers', [])
 
 
 
-.controller('ProfilCtrl', function($scope) {
+.controller('ProfilCtrl', function($scope, $localStorage) {
+  
+  $scope.infosUser = angular.fromJson($localStorage.infos);
+  $scope.infos = {};
+  $scope.updated = {};
+
+  if (typeof $scope.infosUser !== "undefined") {
+    $scope.infos.prenom = $scope.infosUser.prenom;
+    $scope.infos.nom = $scope.infosUser.name;
+  }
+
+
+  $scope.updateInfos = function() {
+
+    delete $localStorage.infos;
+    $scope.$storage = $localStorage.$default({
+            infos : angular.toJson({
+                    'name' : $scope.infos.nom,
+                    'prenom' : $scope.infos.prenom
+                  })
+        });
+    $scope.updated.status = true;
+  }
 })
 
 .controller('CreateCtrl', function($scope, $cordovaGeolocation, $http, $cordovaCamera, $rootScope) {
@@ -185,7 +215,7 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('LoginCtrl', function($scope, $window, $state, $http) {
+.controller('LoginCtrl', function($scope, $window, $state, $http, $localStorage) {
 
   // Function to login user
   $scope.doLogin = function() {
@@ -194,18 +224,16 @@ angular.module('starter.controllers', [])
       if ($scope.loginData.username == "user@kivient.com" && 
           $scope.loginData.password == "useruser") 
       {
-
-            $window.localStorage.setItem(
-              'auth', 
-              angular.toJson({
-                'logged'  : true, 
-                'token'   : 'myTokenKey',
-                'email'   : $scope.loginData.username,
-                'username': 'User',
-                'id'      : 23
-              })
-            );
-            $state.go("app.events");
+        $scope.$storage = $localStorage.$default({
+            auth : angular.toJson({
+                    'logged'  : true, 
+                    'token'   : 'myTokenKey',
+                    'email'   : $scope.loginData.username,
+                    'username': 'User',
+                    'id'      : 23
+                  })
+        });
+        $state.go("app.events");
       }
 
       // logged = AuthService.Authentification(, $scope.loginData.password);
