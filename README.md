@@ -15,6 +15,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 - Splashscreen dépasse de l'écran
 
+- Photos : ne prend pas de photos
+
 
 
 ## Solutions techniques
@@ -28,6 +30,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 - Installer un driver et activer le mode dev sur le device souhaité
 
 - Redimensionner le splashscreen
+
+- Ne pas aller chercher dans la gallery photo
 
 
 ## Problèmes
