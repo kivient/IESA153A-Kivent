@@ -9,6 +9,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 - Storage : sous android il n'y a qu'un champs qui est sauvegardé
 
+- Google analytics : l'utilisateur en temps réel ne s'affiche pas
+
 
 
 ## Solutions techniques
