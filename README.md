@@ -102,5 +102,11 @@ TOUS LES JOURS
 - 9h00 : on récupère les nouvelles demandes clients
 - 9h15 : rédaction des users stories
 - À partir de 9h30 : rendez-vous avec le client, présentations des users stories, questions/réponses et engagements sur la journée
-- 10h 
+- 12h00 : réunion : on expose tous les problèmes (on ne régle pas les problèmes mais on les annonces pour que tous le monde soit au courant) 
+- 12h30-13h30 : pause déjeuner, on oublie le boulot !
+- 13h30-14h00 : les binômes se répartissent les tâches et régles les problèmes évoqués lors de la réunion
+- 15h00 : on commence à tester pour la démo
+- À partir de 15h50 : on voit le client et on effectue la démo
+- 17h00 : debrief, remarques, retrospective de la journée et de la présentation
+- 18h00 : on rentre chez nous et on se repose pour être en forme demain !
 
