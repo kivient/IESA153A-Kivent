@@ -11,6 +11,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 - Google analytics : l'utilisateur en temps réel ne s'affiche pas
 
+- Splashscreen dépasse de l'écran
+
 
 
 ## Solutions techniques
@@ -20,6 +22,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 - Android : configurez un nouvel emulator dans studio android ou installer un driver et faire la démo sur un téléphone
 
 - Storage : conflit entre le programme de debugage sous android et le device
+
+- Redimensionner le splashscreen
 
 
 ## Problèmes
