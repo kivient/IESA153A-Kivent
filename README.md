@@ -9,6 +9,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 - Storage : sous android il n'y a qu'un champs qui est sauvegardé
 
+- Installation de l'application sur device (android)
+
 - Google analytics : l'utilisateur en temps réel ne s'affiche pas
 
 - Splashscreen dépasse de l'écran
@@ -22,6 +24,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 - Android : configurez un nouvel emulator dans studio android ou installer un driver et faire la démo sur un téléphone
 
 - Storage : conflit entre le programme de debugage sous android et le device
+
+- Installer un driver et activer le mode dev sur le device souhaité
 
 - Redimensionner le splashscreen
 
