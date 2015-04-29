@@ -35,6 +35,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 - Ne pas aller chercher dans la gallery photo
 
+- Appeler la librairie Cordova
+
 
 ## Problèmes
 
