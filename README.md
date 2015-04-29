@@ -71,10 +71,12 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 ## Installation
 
-$ npm install -g cordova ionic
-$ ionic platform add ios
-$ ionic build ios
-$ ionic emulate ios
+- $ npm install -g cordova ionic
+- $ ionic platform add ios
+- $ ionic build ios
+- Installer tous les plugins présents dans le package.json
+- $ ionic emulate [ios, android]
+
 
 ## utilisation
 
