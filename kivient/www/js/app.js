@@ -21,6 +21,45 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ui.rout
     if (window.StatusBar) {
       window.StatusBar.hide();
     }
+
+    var delegate = new cordova.plugins.locationManager.Delegate();
+
+    delegate.didDetermineStateForRegion = function (pluginResult) {
+
+      cordova.plugins.locationManager
+        .appendToDeviceLog('[DOM]didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
+
+    };
+
+    delegate.didStartMonitoringForRegion = function (pluginResult) {}
+
+    delegate.didRangeBeaconsInRegion = function(pluginResult) {
+
+      var beaconsFound = pluginResult.beacons;
+
+      if ( beaconsFound && beaconsFound.length>0 ) { 
+        // alert('beacon');
+        $rootScope.$broadcast('beacon', true);
+      } else if (beaconsFound && beaconsFound.length <= 0) {
+        $rootScope.$broadcast('beacon', false);
+      }
+
+    }
+
+
+    var id = 'iBKS';
+    var uuid = '17586a9d-1fd4-4b05-8a50-ac08b6fdc91c';
+    var minor = 1; var major = 4;
+    var beaconRegion = new cordova.plugins.locationManager.BeaconRegion(id, uuid, major, minor);
+    
+    cordova.plugins.locationManager.setDelegate(delegate);
+    cordova.plugins.locationManager.requestAlwaysAuthorization();
+    cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
+           .fail(
+              console.error
+            ).done();
+
+
   });
 
   $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){

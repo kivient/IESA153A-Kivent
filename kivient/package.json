@@ -20,7 +20,8 @@
     "org.apache.cordova.camera",
     "org.apache.cordova.statusbar",
     "org.apache.cordova.network-information",
-    "org.apache.cordova.device-orientation"
+    "org.apache.cordova.device-orientation",
+    "org.apache.cordova.vibration"
   ],
   "cordovaPlatforms": [
     "ios",

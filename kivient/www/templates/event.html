@@ -23,5 +23,8 @@
     <button class="button button-positive" ng-click="participate({{thisEvent.id}})">
 	  {{ t('participate') }}
 	</button>
+    <button class="button button-positive" ng-click='twitter("{{thisEvent.description}}")'>
+      {{ t('share') }}
+    </button>
   </ion-content>
 </ion-view>

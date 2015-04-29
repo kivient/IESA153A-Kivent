@@ -52,6 +52,9 @@ var GlobalizationService = {
 		'infos-uodated'		: { 'en' : 'Your informations has been updated',
 								'fr' : 'Vos informations ont été modifiées'
 							  },
+		'share'				: { 'en' : 'Share on Twitter',
+								'fr' : 'Partager sur Twitter'
+							  },
 	},
 
 

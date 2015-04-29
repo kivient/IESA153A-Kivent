@@ -40,10 +40,11 @@ angular.module('starter.controllers', [])
   };
 
   $scope.setLang();
+
 })
 
 /** List all events **/
-.controller('EventsCtrl', function($scope, $ionicViewService, $localStorage, $cordovaNetwork) {
+.controller('EventsCtrl', function($scope, $ionicViewService, $localStorage, $cordovaNetwork, $rootScope, $cordovaVibration) {
   $ionicViewService.clearHistory();
   $scope.events = allEvents;
 
@@ -52,12 +53,23 @@ angular.module('starter.controllers', [])
       return $cordovaNetwork.isOffline();
     }
   }
+
+
+  $rootScope.$on('beacon', function(event, msg) {
+    if (msg == true) {
+      $('#beaconNotif').stop().show();
+      $cordovaVibration.vibrate(100);
+    } else {
+      $('#beaconNotif').stop().hide();
+    }
+  });
+
 })
 
 
 
 /** Single event age **/
-.controller('EventCtrl', function($scope, $stateParams, $cordovaContacts, $location) {
+.controller('EventCtrl', function($scope, $stateParams, $cordovaContacts, $location, $cordovaSocialSharing) {
   $scope.events = allEvents;
   var id = $stateParams.id;
 
@@ -89,6 +101,18 @@ angular.module('starter.controllers', [])
   $scope.participate = function(id) 
   {
     console.log(id); 
+  }
+
+  // Function to share on Twitter
+  $scope.twitter = function(msg)
+  {
+    $cordovaSocialSharing
+      .shareViaTwitter(msg, null, null)
+      .then(function(result) {
+        console.log('shared');
+      }, function(err) {
+        // An error occurred. Show a message to the user
+      });
   }
 
 })
@@ -162,7 +186,8 @@ angular.module('starter.controllers', [])
       var options = {
         quality: 50,
         destinationType: Camera.DestinationType.DATA_URL,
-        sourceType: Camera.PictureSourceType.CAMERA,
+        // sourceType: Camera.PictureSourceType.CAMERA,
+        sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
         allowEdit: true,
         encodingType: Camera.EncodingType.JPEG,
         targetWidth: 100,
