@@ -46,6 +46,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 - La recherche d'utilisation "Device Orientation" et rédaction de la user story
 
+- Déterminer Killeur Feature
+
 
 ## Solutions
 
@@ -54,6 +56,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 - Prendre plus de temps pour estimer chaque tâche et dans le doute vérifier techniquement avant d'estimer
 
 - Nous allons afficher un message lorsque l'utilisateur tourne son écran pour lui indiquer qu'il aura une meilleure visibilité à la verticale
+
+- Déclencher le vibreur à une certaine distance
 
 
 ## Business Model Canvas
