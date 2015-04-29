@@ -19,6 +19,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 - Impossible de détecter le Beacon
 
+- Social Sharing : Le partage twitter ne se lance pas
+
 
 
 ## Solutions techniques
@@ -36,6 +38,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 - Ne pas aller chercher dans la gallery photo
 
 - Appeler la librairie Cordova
+
+- Intstaller l'application Twitter
 
 
 ## Problèmes
@@ -135,4 +139,7 @@ TOUS LES JOURS
 - À partir de 15h50 : on voit le client et on effectue la démo
 - 17h00 : debrief, remarques, retrospective de la journée et de la présentation
 - 18h00 : on rentre chez nous et on se repose pour être en forme demain !
+
+
+
 
