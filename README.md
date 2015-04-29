@@ -17,6 +17,8 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 - Photos : ne prend pas de photos
 
+- Impossible de détecter le Beacon
+
 
 
 ## Solutions techniques
