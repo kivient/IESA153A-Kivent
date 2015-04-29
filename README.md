@@ -19,7 +19,7 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 - Impossible de détecter le Beacon
 
-- Social Sharing : Le partage twitter ne se lance pas
+- Social Sharing : Le partage twitter ne se lance pas sur les devices Android
 
 
 
@@ -39,7 +39,7 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 - Appeler la librairie Cordova
 
-- Intstaller l'application Twitter
+- Intstaller l'application Twitter (sur android)
 
 
 ## Problèmes
