@@ -78,10 +78,6 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 ![Screenshot des détails](https://scontent-lhr.xx.fbcdn.net/hphotos-xta1/t31.0-8/11148821_10153252133742296_6535450491144904868_o.jpg)
 
 
-
-## utilisation
-
-
 ## Avancement du projet
 
 - J1
