@@ -2,6 +2,15 @@
 
 Application communautaire permettant d'organiser diverses sorties entre étudiants d'une même école.
 
+## Installation
+
+- $ npm install -g cordova ionic
+- $ ionic platform add ios
+- $ ionic build ios
+- Installer tous les plugins présents dans le package.json
+- $ ionic emulate [ios, android]
+
+
 
 ## Blocages techniques
 
@@ -68,14 +77,6 @@ Application communautaire permettant d'organiser diverses sorties entre étudian
 
 ![Screenshot des détails](https://scontent-lhr.xx.fbcdn.net/hphotos-xta1/t31.0-8/11148821_10153252133742296_6535450491144904868_o.jpg)
 
-
-## Installation
-
-- $ npm install -g cordova ionic
-- $ ionic platform add ios
-- $ ionic build ios
-- Installer tous les plugins présents dans le package.json
-- $ ionic emulate [ios, android]
 
 
 ## utilisation
