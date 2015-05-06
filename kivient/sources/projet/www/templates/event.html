@@ -1,0 +1,32 @@
+<ion-view view-title="Évènement">
+  <ion-content class="padding">
+    <div class="img" style="text-align:center;">
+  	 <img ng-src="img/{{thisEvent.picture}}">
+    </div>
+    <h1>{{thisEvent.title}}</h1>
+    <div class="category">
+    <span>{{thisEvent.category}}</span>
+    <button class="button icon ion-person-stalker" ng-click="addContact()"></button>
+    </div>
+    <div class="hours">
+    	<span>le {{thisEvent.hours.date}} </span>
+	    <span>{{thisEvent.hours.start}} - {{thisEvent.hours.end}}</span>
+    </div>
+
+    <div class="adress">
+    	<span>{{thisEvent.adress.street}}</span><br>
+    	<span>{{thisEvent.adress.cp}}</span><span>{{thisEvent.adress.city}}</span>
+    </div>
+
+    <div class="description">
+    	<p>{{thisEvent.description}}</p>
+    </div>
+
+    <button class="button button-positive" ng-click="participate({{thisEvent.id}})">
+	  {{ t('participate') }}
+	</button>
+    <button class="button button-positive" ng-click='twitter("{{thisEvent.description}}")'>
+      {{ t('share') }}
+    </button>
+  </ion-content>
+</ion-view>
